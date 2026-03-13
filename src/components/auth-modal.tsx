@@ -34,7 +34,7 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
             <div className="p-10">
               <div className="text-center mb-10">
-                <h2 className="font-serif text-3xl font-bold text-secondary dark:text-parchment mb-2">
+                <h2 className="font-serif text-3xl font-bold text-secondary dark:text-foreground mb-2">
                   {isLogin ? 'Welcome Back' : 'Create Account'}
                 </h2>
                 <p className="text-muted-foreground text-sm">

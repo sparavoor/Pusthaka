@@ -74,9 +74,9 @@ export default function ChatPage() {
                        </button>
                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs shadow-md">RV</div>
                        <div>
-                          <h3 className="font-bold text-sm">Rahul Varma</h3>
-                          <div className="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase tracking-widest">
-                             <div className="w-1 h-1 bg-green-600 rounded-full animate-pulse" />
+                          <h3 className="font-bold text-sm dark:text-parchment">Rahul Varma</h3>
+                          <div className="flex items-center gap-1 text-[10px] text-green-600 dark:text-green-400 font-bold uppercase tracking-widest">
+                             <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                              Online
                           </div>
                        </div>
@@ -113,7 +113,7 @@ export default function ChatPage() {
                          <div className={`max-w-[85%] sm:max-w-[70%] p-3 sm:p-4 rounded-3xl shadow-sm relative ${
                            m.sender === 'Me' 
                            ? 'bg-primary text-white rounded-tr-none' 
-                           : 'bg-white dark:bg-muted/50 border border-border dark:border-white/5 rounded-tl-none dark:text-white'
+                           : 'bg-white dark:bg-muted border border-border dark:border-white/5 rounded-tl-none dark:text-foreground'
                          }`}>
                             <p className="text-sm leading-relaxed">{m.text}</p>
                             <span className={`text-[8px] mt-2 block opacity-70 ${m.sender === 'Me' ? 'text-right' : 'text-left'}`}>
