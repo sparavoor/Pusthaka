@@ -27,7 +27,7 @@ export function Hero() {
               Read, Resell, <br />
               <span className="text-primary italic">Repeat.</span>
             </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
+            <p className="mt-6 text-lg text-muted-foreground dark:text-muted-foreground/90 max-w-lg leading-relaxed">
               Affordable books for every student. Join thousands of students buying, selling, and renting textbooks at 60% lower costs.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -57,16 +57,16 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 rounded-2xl bg-white p-4 shadow-2xl dark:bg-card">
+            <div className="relative z-10 rounded-2xl bg-white p-4 shadow-2xl dark:bg-card border border-border dark:border-white/5">
               <img
                 src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800"
                 alt="Stack of books"
                 className="rounded-xl object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 rounded-2xl bg-secondary p-6 text-white shadow-xl max-w-[200px]">
+              <div className="absolute -bottom-6 -right-6 rounded-2xl bg-secondary dark:bg-primary p-6 text-white shadow-xl max-w-[200px]">
                 <BookOpen size={24} className="mb-2" />
                 <p className="font-serif text-lg font-bold">Save up to 60%</p>
-                <p className="text-xs text-secondary-foreground/80">On all university textbooks and reference materials.</p>
+                <p className="text-xs text-secondary-foreground/80 dark:text-white/80">On all university textbooks and reference materials.</p>
               </div>
             </div>
           </motion.div>

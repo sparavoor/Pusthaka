@@ -46,7 +46,7 @@ export function FeaturedBooks() {
             <h2 className="font-serif text-4xl font-bold text-secondary dark:text-parchment mb-4">
               Featured Books
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground dark:text-muted-foreground/90">
               Handpicked quality textbooks at unbeatable prices. Updated daily from verified student sellers.
             </p>
           </div>

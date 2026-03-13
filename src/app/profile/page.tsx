@@ -28,8 +28,8 @@ export default function ProfilePage() {
                     </div>
                     <div className="absolute bottom-0 right-0 w-8 h-8 bg-green-500 border-4 border-white dark:border-card rounded-full" />
                   </div>
-                  <h2 className="font-serif text-2xl font-bold">Ananya Sharma</h2>
-                  <p className="text-muted-foreground text-sm mb-6 italic">Engineering @ IIT Delhi</p>
+                  <h2 className="font-serif text-2xl font-bold dark:text-parchment">Ananya Sharma</h2>
+                  <p className="text-muted-foreground dark:text-muted-foreground/90 text-sm mb-6 italic">Engineering @ IIT Delhi</p>
                   
                   <div className="flex justify-center gap-2 mb-8">
                      <span className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-[10px] font-bold">

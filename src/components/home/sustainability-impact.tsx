@@ -26,8 +26,8 @@ export function SustainabilityImpact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-4xl font-bold mb-6">Our Sustainability Mission</h2>
-            <p className="text-secondary-foreground/80 text-lg leading-relaxed mb-8">
+            <h2 className="font-serif text-4xl font-bold mb-6 text-white">Our Sustainability Mission</h2>
+            <p className="text-secondary-foreground/80 dark:text-white/80 text-lg leading-relaxed mb-8">
               Pusthaka isn't just a marketplace; it's a movement towards a circular economy in education. 
               By reusing textbooks, we reduce paper demand, save trees, and make education affordable for everyone.
             </p>

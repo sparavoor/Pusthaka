@@ -27,7 +27,7 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
           >
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 p-2 rounded-full hover:bg-black/5 transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-muted-foreground transition-colors"
             >
               <X size={20} />
             </button>
@@ -44,11 +44,11 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card">
+                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
                     <Chrome size={20} className="mr-2" />
                     Google
                   </Button>
-                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card">
+                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
                     <Github size={20} className="mr-2" />
                     Github
                   </Button>

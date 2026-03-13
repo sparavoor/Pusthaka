@@ -4,8 +4,8 @@ import * as React from 'react';
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Input, Button } from "@/components/ui-primitives";
-import { Search, Filter, SlidersHorizontal, ShoppingCart, Heart, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
+import { Search, Filter, SlidersHorizontal, ShoppingCart, Heart, MapPin, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const categories = ["Engineering", "Medical", "Arts", "Commerce", "Law", "Management", "Literature"];
 const conditions = ["Nearly New", "Excellent", "Good", "Acceptable"];
@@ -20,6 +20,7 @@ const mockBooks = [
 
 export default function MarketplacePage() {
   const [activeCategory, setActiveCategory] = React.useState("All");
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -79,7 +80,11 @@ export default function MarketplacePage() {
                   <Input placeholder="Search by title, author, or ISBN..." className="pl-10 h-12 rounded-full" />
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="outline" className="sm:hidden rounded-full h-12 w-12 p-0">
+                  <Button 
+                    variant="outline" 
+                    className="lg:hidden rounded-full h-12 w-12 p-0"
+                    onClick={() => setIsMobileFilterOpen(true)}
+                  >
                     <Filter size={20} />
                   </Button>
                   <Button variant="primary" className="rounded-full h-12 px-6">
@@ -156,6 +161,94 @@ export default function MarketplacePage() {
         </div>
       </main>
       <Footer />
+
+      {/* Mobile Filter Overlay */}
+      <AnimatePresence>
+        {isMobileFilterOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileFilterOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] lg:hidden"
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 h-full w-[300px] bg-white dark:bg-card z-[70] shadow-2xl p-6 lg:hidden overflow-y-auto"
+            >
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="font-serif text-2xl font-bold">Filters</h2>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => setIsMobileFilterOpen(false)}
+                  className="rounded-full"
+                >
+                  <X size={20} />
+                </Button>
+              </div>
+
+              <div className="space-y-8">
+                <div>
+                  <h3 className="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-4">Subject</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {["All", ...categories].map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setActiveCategory(category);
+                          setIsMobileFilterOpen(false);
+                        }}
+                        className={`text-left px-3 py-2 rounded-xl text-xs transition-all ${
+                          activeCategory === category 
+                          ? 'bg-primary text-white shadow-md' 
+                          : 'bg-muted hover:bg-muted/80 text-muted-foreground'
+                        }`}
+                      >
+                        {category}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-4">Condition</h3>
+                  <div className="space-y-3">
+                    {conditions.map((cond) => (
+                      <label key={cond} className="flex items-center gap-3 text-sm cursor-pointer group">
+                        <input type="checkbox" className="w-5 h-5 rounded-lg border-muted bg-muted text-primary focus:ring-primary/20 transition-all" />
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors">{cond}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-sm uppercase tracking-widest text-muted-foreground mb-4">Price Range</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1">
+                      <span className="text-[10px] text-muted-foreground ml-1">Min</span>
+                      <Input placeholder="₹0" className="rounded-xl" />
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] text-muted-foreground ml-1">Max</span>
+                      <Input placeholder="₹5000" className="rounded-xl" />
+                    </div>
+                  </div>
+                </div>
+
+                <Button className="w-full h-12 rounded-2xl shadow-lg mt-4" onClick={() => setIsMobileFilterOpen(false)}>
+                  Show Results
+                </Button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

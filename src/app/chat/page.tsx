@@ -4,8 +4,9 @@ import * as React from 'react';
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Input, Button } from "@/components/ui-primitives";
-import { Send, Image, MoreVertical, ShieldCheck, MapPin } from "lucide-react";
+import { Send, Image, MoreVertical, ShieldCheck, MapPin, ChevronLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const messages = [
   { id: 1, sender: 'Seller', text: 'Hi! Yes, the book is available. There are some pencil marks on page 42 though.', time: '10:30 AM' },
@@ -14,15 +15,20 @@ const messages = [
 ];
 
 export default function ChatPage() {
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+
   return (
-    <div className="flex min-h-screen flex-col h-screen">
+    <div className="flex min-h-screen flex-col h-screen max-h-screen overflow-hidden">
       <Navbar />
-      <main className="flex-grow bg-parchment dark:bg-background overflow-hidden">
-        <div className="container mx-auto px-4 h-full py-8">
-           <div className="bg-white dark:bg-card h-[calc(100vh-200px)] rounded-[3rem] shadow-2xl border border-border overflow-hidden flex flex-col md:flex-row">
+      <main className="flex-grow bg-parchment dark:bg-background overflow-hidden relative">
+        <div className="container mx-auto px-0 sm:px-4 h-full py-0 sm:py-8 flex flex-col">
+           <div className="bg-white dark:bg-card flex-grow sm:h-[calc(100vh-200px)] sm:rounded-[3rem] shadow-2xl border-none sm:border border-border overflow-hidden flex flex-col md:flex-row relative">
               
               {/* Contacts Sidebar */}
-              <aside className="w-full md:w-80 border-r border-border flex flex-col bg-muted/30">
+              <aside className={cn(
+                "w-full md:w-80 border-r border-border flex flex-col bg-muted/30 transition-all duration-300 absolute md:relative inset-0 z-20 md:z-10",
+                isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+              )}>
                  <div className="p-6 border-b border-border bg-white dark:bg-card">
                     <h2 className="font-bold text-xl">Messages</h2>
                  </div>
@@ -32,7 +38,11 @@ export default function ChatPage() {
                       { name: 'Sarah K.', book: 'Pride & Prejudice', active: false, online: false },
                       { name: 'Admin Help', book: 'Support Request', active: false, online: true },
                     ].map((contact, i) => (
-                      <div key={i} className={`p-4 flex items-center gap-4 cursor-pointer hover:bg-primary/5 transition-all ${contact.active ? 'bg-primary/10 border-r-4 border-primary' : ''}`}>
+                      <div 
+                        key={i} 
+                        onClick={() => setIsSidebarOpen(false)}
+                        className={`p-4 flex items-center gap-4 cursor-pointer hover:bg-primary/5 transition-all ${contact.active ? 'bg-primary/10 border-r-4 border-primary' : ''}`}
+                      >
                          <div className="relative">
                             <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-sm shadow-sm">
                                {contact.name[0]}
@@ -54,9 +64,15 @@ export default function ChatPage() {
               {/* Chat View */}
               <div className="flex-grow flex flex-col bg-white dark:bg-card">
                  {/* Chat Header */}
-                 <header className="p-6 border-b border-border flex justify-between items-center shadow-sm relative z-10">
-                    <div className="flex items-center gap-4">
-                       <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs shadow-md">RV</div>
+                 <header className="p-4 sm:p-6 border-b border-border flex justify-between items-center shadow-sm relative z-10 bg-white dark:bg-card">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                       <button 
+                         onClick={() => setIsSidebarOpen(true)}
+                         className="md:hidden p-2 -ml-2 rounded-full hover:bg-muted transition-colors"
+                       >
+                          <ChevronLeft size={20} />
+                       </button>
+                       <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs shadow-md">RV</div>
                        <div>
                           <h3 className="font-bold text-sm">Rahul Varma</h3>
                           <div className="flex items-center gap-1 text-[10px] text-green-600 font-bold uppercase tracking-widest">
@@ -82,19 +98,19 @@ export default function ChatPage() {
                  </header>
 
                  {/* Message Area */}
-                 <div className="flex-grow overflow-y-auto p-8 space-y-6 bg-parchment/30 dark:bg-background/30">
+                 <div className="flex-grow overflow-y-auto p-4 sm:p-8 space-y-6 bg-parchment/30 dark:bg-background/30">
                     <div className="flex justify-center mb-8">
                        <span className="bg-white dark:bg-card px-4 py-1.5 rounded-full text-[10px] font-bold text-muted-foreground uppercase tracking-widest border border-border shadow-sm">Today</span>
                     </div>
 
                     {messages.map((m) => (
                       <motion.div 
-                        initial={{ opacity: 0, x: m.sender === 'Me' ? 20 : -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         key={m.id} 
                         className={`flex ${m.sender === 'Me' ? 'justify-end' : 'justify-start'}`}
                       >
-                         <div className={`max-w-[70%] p-4 rounded-3xl shadow-sm relative ${
+                         <div className={`max-w-[85%] sm:max-w-[70%] p-3 sm:p-4 rounded-3xl shadow-sm relative ${
                            m.sender === 'Me' 
                            ? 'bg-primary text-white rounded-tr-none' 
                            : 'bg-white dark:bg-card border border-border rounded-tl-none'
