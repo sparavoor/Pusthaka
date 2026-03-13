@@ -23,7 +23,7 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md bg-parchment dark:bg-background rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/20"
+            className="relative w-full max-w-md bg-background rounded-[2.5rem] shadow-2xl overflow-hidden border border-border dark:border-white/5"
           >
             <button
               onClick={onClose}
@@ -44,11 +44,11 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
+                  <Button variant="outline" className="rounded-xl h-12 bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
                     <Chrome size={20} className="mr-2" />
                     Google
                   </Button>
-                  <Button variant="outline" className="rounded-xl h-12 bg-white dark:bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
+                  <Button variant="outline" className="rounded-xl h-12 bg-card border-border dark:border-white/10 hover:bg-muted dark:hover:bg-white/5 transition-colors">
                     <Github size={20} className="mr-2" />
                     Github
                   </Button>
@@ -56,22 +56,22 @@ export function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
                 
                 <div className="relative flex items-center justify-center mb-6">
                    <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-border" /></div>
-                   <span className="relative bg-parchment dark:bg-background px-4 text-[10px] text-muted-foreground uppercase tracking-widest font-bold">or continue with email</span>
+                   <span className="relative bg-background px-4 text-[10px] text-muted-foreground uppercase tracking-widest font-bold">or continue with email</span>
                 </div>
 
                 {!isLogin && (
                   <div className="space-y-1">
                     <label className="text-[10px] font-bold uppercase ml-2 text-muted-foreground">Full Name</label>
-                    <Input placeholder="Ananya Sharma" className="bg-white dark:bg-card" />
+                    <Input placeholder="Ananya Sharma" className="bg-card" />
                   </div>
                 )}
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold uppercase ml-2 text-muted-foreground">Email Address</label>
-                  <Input type="email" placeholder="student@university.edu" className="bg-white dark:bg-card" />
+                  <Input type="email" placeholder="student@university.edu" className="bg-card" />
                 </div>
                 <div className="space-y-1">
                   <label className="text-[10px] font-bold uppercase ml-2 text-muted-foreground">Password</label>
-                  <Input type="password" placeholder="••••••••" className="bg-white dark:bg-card" />
+                  <Input type="password" placeholder="••••••••" className="bg-card" />
                 </div>
 
                 {isLogin && (

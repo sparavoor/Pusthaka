@@ -7,10 +7,10 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-parchment py-20 lg:py-32 dark:bg-background">
+    <section className="relative overflow-hidden bg-background py-20 lg:py-32">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 h-64 w-64 rounded-full bg-accent/20 blur-3xl dark:opacity-20" />
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl dark:opacity-20" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
@@ -57,7 +57,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 rounded-2xl bg-white p-4 shadow-2xl dark:bg-card border border-border dark:border-white/5">
+            <div className="relative z-10 rounded-2xl bg-card p-4 shadow-2xl border border-border dark:border-white/5">
               <img
                 src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=800"
                 alt="Stack of books"

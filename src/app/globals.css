@@ -10,8 +10,8 @@
   --color-accent: #D2B48C;
   --color-accent-foreground: #704214;
   
-  --color-parchment: #FDFBF7;
-  --color-wheat: #F5DEB3;
+  --color-parchment: var(--parchment);
+  --color-wheat: var(--wheat);
   
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -54,28 +54,32 @@
   --border: #E5E7EB;
   --input: #E5E7EB;
   --ring: #704214;
+  --parchment: #FDFBF7;
+  --wheat: #F5DEB3;
 }
 
 .dark {
-  --background: #1A1614;
+  --background: #12100E;
   --foreground: #FDFBF7;
-  --card: #251F1C;
+  --card: #1A1614;
   --card-foreground: #FDFBF7;
-  --popover: #251F1C;
+  --popover: #1A1614;
   --popover-foreground: #FDFBF7;
   --primary: #A07855;
-  --primary-foreground: #1A1614;
+  --primary-foreground: #12100E;
   --secondary: #3B82F6;
   --secondary-foreground: #ffffff;
-  --muted: #2D241E;
+  --muted: #1A1614;
   --muted-foreground: #9CA3AF;
   --accent: #A07855;
   --accent-foreground: #FDFBF7;
   --destructive: #7f1d1d;
   --destructive-foreground: #f8fafc;
-  --border: #3F3F46;
-  --input: #3F3F46;
+  --border: #2D241E;
+  --input: #2D241E;
   --ring: #A07855;
+  --parchment: #1A1614;
+  --wheat: #2D241E;
 }
 
 @layer base {

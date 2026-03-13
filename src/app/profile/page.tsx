@@ -21,7 +21,7 @@ export default function ProfilePage() {
             
             {/* Profile Sidebar */}
             <aside className="lg:col-span-1 space-y-6">
-               <div className="bg-white dark:bg-card rounded-[2.5rem] p-8 shadow-xl border border-border text-center">
+               <div className="bg-card rounded-[2.5rem] p-8 shadow-xl border border-border text-center">
                   <div className="relative inline-block mb-4">
                     <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-white text-3xl font-bold border-4 border-parchment shadow-lg mx-auto">
                       AS
@@ -75,14 +75,14 @@ export default function ProfilePage() {
                     { label: "Money Saved", val: "₹5,400", color: "text-green-600" },
                     { label: "Trust Score", val: "98%", color: "text-primary" },
                   ].map((stat) => (
-                    <div key={stat.label} className="bg-white dark:bg-card p-6 rounded-3xl border border-border shadow-sm">
+                    <div key={stat.label} className="bg-card p-6 rounded-3xl border border-border shadow-sm">
                        <div className="text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-1">{stat.label}</div>
                        <div className={`text-3xl font-serif font-bold ${stat.color}`}>{stat.val}</div>
                     </div>
                   ))}
                </div>
 
-               <div className="bg-white dark:bg-card rounded-[2.5rem] p-8 lg:p-10 shadow-xl border border-border">
+               <div className="bg-card rounded-[2.5rem] p-8 lg:p-10 shadow-xl border border-border">
                   <div className="flex justify-between items-center mb-10">
                     <h3 className="font-serif text-2xl font-bold">Manage Listings</h3>
                     <Button size="sm" className="rounded-xl">Add New Book</Button>
@@ -90,7 +90,7 @@ export default function ProfilePage() {
 
                   <div className="space-y-4">
                      {myBooks.map((book) => (
-                       <div key={book.id} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-3xl bg-parchment dark:bg-background border border-border hover:shadow-md transition-all gap-6">
+                       <div key={book.id} className="flex flex-col sm:flex-row items-center justify-between p-6 rounded-3xl bg-background border border-border hover:shadow-md transition-all gap-6">
                           <div className="flex items-center gap-6">
                              <div className="w-16 h-20 bg-accent/20 rounded-xl flex items-center justify-center text-primary/30">
                                 <Book size={32} />

@@ -113,7 +113,7 @@ export default function ChatPage() {
                          <div className={`max-w-[85%] sm:max-w-[70%] p-3 sm:p-4 rounded-3xl shadow-sm relative ${
                            m.sender === 'Me' 
                            ? 'bg-primary text-white rounded-tr-none' 
-                           : 'bg-white dark:bg-card border border-border rounded-tl-none'
+                           : 'bg-white dark:bg-muted/50 border border-border dark:border-white/5 rounded-tl-none dark:text-white'
                          }`}>
                             <p className="text-sm leading-relaxed">{m.text}</p>
                             <span className={`text-[8px] mt-2 block opacity-70 ${m.sender === 'Me' ? 'text-right' : 'text-left'}`}>
@@ -130,7 +130,7 @@ export default function ChatPage() {
                        <Image size={20} />
                     </button>
                     <div className="flex-grow relative">
-                       <Input placeholder="Type your message..." className="pr-12 h-14 rounded-[1.25rem] bg-muted/30 border-none shadow-none focus-visible:ring-primary/20" />
+                       <Input placeholder="Type your message..." className="pr-12 h-14 rounded-[1.25rem] bg-muted/30 dark:bg-white/5 border-none shadow-none focus-visible:ring-primary/20" />
                        <Button size="icon" className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl">
                           <Send size={18} />
                        </Button>

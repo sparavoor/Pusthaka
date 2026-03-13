@@ -8,31 +8,31 @@ const steps = [
     title: 'List Book',
     description: 'Scan ISBN, upload photos, and set your price in minutes.',
     icon: Search,
-    color: 'bg-blue-100 text-blue-600',
+    color: 'bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400',
   },
   {
     title: 'Quality Verification',
     description: 'Our team ensures books are in good condition for the next reader.',
     icon: ShieldCheck,
-    color: 'bg-green-100 text-green-600',
+    color: 'bg-green-100 text-green-600 dark:bg-green-900/40 dark:text-green-400',
   },
   {
     title: 'Buy or Rent',
     description: 'Choose to buy permanently or rent for a semester at low rates.',
     icon: ShoppingCart,
-    color: 'bg-orange-100 text-orange-600',
+    color: 'bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-400',
   },
   {
     title: 'Exchange',
     description: 'Meet at a campus hub or get it delivered to your doorstep.',
     icon: RefreshCw,
-    color: 'bg-purple-100 text-purple-600',
+    color: 'bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-400',
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="py-24 bg-white dark:bg-card">
+    <section className="py-24 bg-background dark:bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-serif text-4xl font-bold text-secondary dark:text-parchment mb-4">

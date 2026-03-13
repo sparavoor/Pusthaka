@@ -115,7 +115,7 @@ export default function MarketplacePage() {
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-white dark:bg-card border border-border rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all"
+                    className="bg-card border border-border rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all"
                   >
                     <div className="relative aspect-[4/5] overflow-hidden">
                        <img src={book.image} alt={book.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -144,7 +144,7 @@ export default function MarketplacePage() {
 
                       <div className="flex items-center justify-between border-t border-border pt-4">
                         <div>
-                          <div className="text-xl font-bold text-primary">₹{book.price}</div>
+                           <div className="text-xl font-bold text-primary dark:text-primary-foreground/90">₹{book.price}</div>
                           <div className="text-[10px] text-muted-foreground line-through">₹{book.originalPrice}</div>
                         </div>
                         <Button size="sm" className="rounded-xl">
@@ -181,12 +181,12 @@ export default function MarketplacePage() {
               className="fixed right-0 top-0 h-full w-[300px] bg-white dark:bg-card z-[70] shadow-2xl p-6 lg:hidden overflow-y-auto"
             >
               <div className="flex justify-between items-center mb-8">
-                <h2 className="font-serif text-2xl font-bold">Filters</h2>
+                <h2 className="font-serif text-2xl font-bold dark:text-parchment">Filters</h2>
                 <Button 
                   variant="ghost" 
                   size="sm" 
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="rounded-full"
+                  className="rounded-full dark:hover:bg-white/10"
                 >
                   <X size={20} />
                 </Button>
