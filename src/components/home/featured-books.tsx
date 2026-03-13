@@ -61,7 +61,7 @@ export function FeaturedBooks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white dark:bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"
+              className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-border"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
@@ -69,7 +69,7 @@ export function FeaturedBooks() {
                   alt={book.title}
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                 />
-                <button className="absolute top-4 right-4 p-2 rounded-full bg-white/80 backdrop-blur-md text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                <button className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-md text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                   <Heart size={20} />
                 </button>
                 <div className="absolute bottom-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">

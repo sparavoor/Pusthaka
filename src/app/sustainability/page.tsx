@@ -28,7 +28,7 @@ export default function SustainabilityPage() {
           </div>
         </section>
 
-        <section className="py-24 bg-white dark:bg-card">
+        <section className="py-24 bg-card">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                <motion.div
@@ -80,7 +80,7 @@ export default function SustainabilityPage() {
                   { label: "Water Saved", val: "8.2M Liters", color: "text-blue-600" },
                   { label: "Lower Cost of Ed", val: "60%", color: "text-orange-600" },
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white dark:bg-card p-10 rounded-3xl border border-border shadow-xl">
+                  <div key={i} className="bg-muted/50 dark:bg-background p-10 rounded-3xl border border-border shadow-xl">
                      <div className={`text-4xl font-bold mb-2 ${stat.color}`}>{stat.val}</div>
                      <div className="text-muted-foreground font-medium uppercase tracking-widest text-xs">{stat.label}</div>
                   </div>

@@ -21,7 +21,7 @@ export default function ContactPage() {
                  </div>
 
                  <div className="space-y-6">
-                    <div className="flex items-center gap-6 p-6 bg-white dark:bg-card rounded-2xl border border-border">
+                    <div className="flex items-center gap-6 p-6 bg-card rounded-2xl border border-border">
                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                           <Mail size={24} />
                        </div>
@@ -30,7 +30,7 @@ export default function ContactPage() {
                           <p className="text-muted-foreground text-sm">support@pusthaka.com</p>
                        </div>
                     </div>
-                    <div className="flex items-center gap-6 p-6 bg-white dark:bg-card rounded-2xl border border-border">
+                    <div className="flex items-center gap-6 p-6 bg-card rounded-2xl border border-border">
                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                           <Phone size={24} />
                        </div>
@@ -39,7 +39,7 @@ export default function ContactPage() {
                           <p className="text-muted-foreground text-sm">+91 98765 43210</p>
                        </div>
                     </div>
-                    <div className="flex items-center gap-6 p-6 bg-white dark:bg-card rounded-2xl border border-border">
+                    <div className="flex items-center gap-6 p-6 bg-card rounded-2xl border border-border">
                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                           <MapPin size={24} />
                        </div>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                  </div>
               </div>
 
-              <div className="bg-white dark:bg-card p-10 lg:p-12 rounded-[3rem] shadow-2xl border border-border">
+              <div className="bg-card p-10 lg:p-12 rounded-[3rem] shadow-2xl border border-border">
                  <h2 className="font-serif text-3xl font-bold mb-8">Send us a Message</h2>
                  <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

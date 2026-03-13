@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #704214;
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   
-  --color-secondary: #1A365D;
-  --color-secondary-foreground: #ffffff;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   
-  --color-accent: #D2B48C;
-  --color-accent-foreground: #704214;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   
   --color-parchment: var(--parchment);
   --color-wheat: var(--wheat);
@@ -61,14 +61,14 @@
 .dark {
   --background: #12100E;
   --foreground: #FDFBF7;
-  --card: #1A1614;
+  --card: #1C1816;
   --card-foreground: #FDFBF7;
-  --popover: #1A1614;
+  --popover: #1C1816;
   --popover-foreground: #FDFBF7;
   --primary: #A07855;
   --primary-foreground: #12100E;
-  --secondary: #3B82F6;
-  --secondary-foreground: #ffffff;
+  --secondary: #93C5FD;
+  --secondary-foreground: #0F172A;
   --muted: #1A1614;
   --muted-foreground: #9CA3AF;
   --accent: #A07855;

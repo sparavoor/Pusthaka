@@ -39,7 +39,7 @@ export function SustainabilityImpact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
+                  className="bg-primary-foreground/10 backdrop-blur-md rounded-2xl p-6 border border-white/10"
                 >
                   <stat.icon size={32} className={`${stat.color} mb-4`} />
                   <div className="text-3xl font-bold mb-1">{stat.value}</div>

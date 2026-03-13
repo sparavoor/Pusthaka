@@ -26,11 +26,11 @@ export default function ChatPage() {
               
               {/* Contacts Sidebar */}
               <aside className={cn(
-                "w-full md:w-80 border-r border-border flex flex-col bg-muted/30 transition-all duration-300 absolute md:relative inset-0 z-20 md:z-10",
+                "w-full md:w-80 border-r border-border flex flex-col bg-card transition-all duration-300 absolute md:relative inset-0 z-20 md:z-10",
                 isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
               )}>
-                 <div className="p-6 border-b border-border bg-white dark:bg-card">
-                    <h2 className="font-bold text-xl">Messages</h2>
+                 <div className="p-6 border-b border-border bg-card">
+                    <h2 className="font-bold text-xl text-foreground">Messages</h2>
                  </div>
                  <div className="flex-grow overflow-y-auto">
                     {[
@@ -64,7 +64,7 @@ export default function ChatPage() {
               {/* Chat View */}
               <div className="flex-grow flex flex-col bg-white dark:bg-card">
                  {/* Chat Header */}
-                 <header className="p-4 sm:p-6 border-b border-border flex justify-between items-center shadow-sm relative z-10 bg-white dark:bg-card">
+                 <header className="p-4 sm:p-6 border-b border-border flex justify-between items-center shadow-sm relative z-10 bg-card">
                     <div className="flex items-center gap-3 sm:gap-4">
                        <button 
                          onClick={() => setIsSidebarOpen(true)}
@@ -100,7 +100,7 @@ export default function ChatPage() {
                  {/* Message Area */}
                  <div className="flex-grow overflow-y-auto p-4 sm:p-8 space-y-6 bg-parchment/30 dark:bg-background/30">
                     <div className="flex justify-center mb-8">
-                       <span className="bg-white dark:bg-card px-4 py-1.5 rounded-full text-[10px] font-bold text-muted-foreground uppercase tracking-widest border border-border shadow-sm">Today</span>
+                       <span className="bg-card px-4 py-1.5 rounded-full text-[10px] font-bold text-muted-foreground uppercase tracking-widest border border-border shadow-sm">Today</span>
                     </div>
 
                     {messages.map((m) => (
@@ -113,7 +113,7 @@ export default function ChatPage() {
                          <div className={`max-w-[85%] sm:max-w-[70%] p-3 sm:p-4 rounded-3xl shadow-sm relative ${
                            m.sender === 'Me' 
                            ? 'bg-primary text-white rounded-tr-none' 
-                           : 'bg-white dark:bg-muted border border-border dark:border-white/5 rounded-tl-none dark:text-foreground'
+                           : 'bg-muted border border-border dark:border-white/5 rounded-tl-none text-foreground'
                          }`}>
                             <p className="text-sm leading-relaxed">{m.text}</p>
                             <span className={`text-[8px] mt-2 block opacity-70 ${m.sender === 'Me' ? 'text-right' : 'text-left'}`}>
@@ -125,7 +125,7 @@ export default function ChatPage() {
                  </div>
 
                  {/* Input Area */}
-                 <footer className="p-6 border-t border-border flex items-center gap-4 bg-white dark:bg-card shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+                 <footer className="p-6 border-t border-border flex items-center gap-4 bg-card shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
                     <button className="p-3 text-muted-foreground hover:text-primary transition-colors bg-muted/50 rounded-2xl">
                        <Image size={20} />
                     </button>

@@ -31,7 +31,7 @@ export default function HowItWorksPage() {
                     Upload a few photos of the actual condition and set your price.
                   </p>
                 </div>
-                <div className="w-full md:w-1/2 bg-white dark:bg-card p-4 rounded-3xl shadow-xl">
+                <div className="w-full md:w-1/2 bg-card p-4 rounded-3xl shadow-xl">
                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=400" alt="Listing" className="rounded-2xl" />
                 </div>
               </div>
@@ -45,7 +45,7 @@ export default function HowItWorksPage() {
                     This ensures that buyers always get what they expect, maintaining trust in the ecosystem.
                   </p>
                 </div>
-                <div className="w-full md:w-1/2 bg-white dark:bg-card p-4 rounded-3xl shadow-xl">
+                <div className="w-full md:w-1/2 bg-card p-4 rounded-3xl shadow-xl">
                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=400" alt="Quality" className="rounded-2xl" />
                 </div>
               </div>

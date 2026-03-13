@@ -26,10 +26,10 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-white dark:bg-card">
+    <section className="py-24 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl font-bold text-secondary dark:text-parchment mb-4">
+          <h2 className="font-serif text-4xl font-bold text-secondary dark:text-foreground mb-4">
             Why Students Love Pusthaka
           </h2>
           <p className="text-muted-foreground">
@@ -45,7 +45,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-parchment dark:bg-background border border-border relative overflow-hidden group"
+              className="p-8 rounded-3xl bg-muted/30 dark:bg-background/40 border border-border relative overflow-hidden group"
             >
               <Quote size={40} className="absolute -top-2 -right-2 text-primary/10 group-hover:text-primary/20 transition-colors" />
               <p className="text-lg leading-relaxed mb-8 italic relative z-10 text-muted-foreground">
@@ -56,7 +56,7 @@ export function Testimonials() {
                   {t.avatar}
                 </div>
                 <div>
-                  <div className="font-bold text-secondary dark:text-parchment">{t.name}</div>
+                   <div className="font-bold text-secondary dark:text-foreground">{t.name}</div>
                   <div className="text-sm text-muted-foreground">{t.role}</div>
                 </div>
               </div>
